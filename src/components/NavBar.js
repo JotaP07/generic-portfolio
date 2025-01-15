@@ -209,9 +209,10 @@ const NavBar = () => {
             </div>
 
             <div
-                className="hidden z-20 lg:inline-block absolute top-3.5 sm:-right-4 xs:-right-5 lg:right-0 bottom-0 w-24 h-auto sm:top-5">
+                className="hidden z-20 lg:inline-block absolute top-3.5 right-0 w-24 h-auto sm:top-5 sm:w-20">
                 <CatComponent className="fill-dark dark:fill-light text-6xl sm:text-5xl"/>
             </div>
+
         </header>
     )
 }
