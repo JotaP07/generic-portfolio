@@ -2,7 +2,8 @@ import React, {useState} from 'react'
 import Link from "next/link";
 import Logo from "@/components/Logo";
 import {useRouter} from "next/router";
-import {
+import{
+    CatComponent,
     TwitterIcon,
     DribbbleIcon,
     GithubIcon,
@@ -11,8 +12,10 @@ import {
     SunIcon,
     MoonIcon
 } from "@/components/Icons";
-import { AnimatePresence, motion } from "framer-motion";
+import {AnimatePresence, motion} from "framer-motion";
 import useThemeSwitcher from "@/components/hooks/useThemeSwitcher";
+import TransitionEffect from "@/components/TransitionEffect";
+import TransitionMode from "@/components/TransitionMode";
 
 const CustomLink = ({href, title, className = ""}) => {
     const router = useRouter();
@@ -48,12 +51,22 @@ const NavBar = () => {
 
     const [mode, setMode] = useThemeSwitcher()
     const [isOpen, setIsOpen] = useState(false)
+    const [showTransition, setShowTransition] = useState(false); // Estado para controlar a transição
+
+    const handleThemeChange = () => {
+        setShowTransition(true); // Exibe a transição
+        setMode(mode === "light" ? "dark" : "light");
+        setTimeout(() => setShowTransition(false), 800); // Oculta a transição após a duração
+    };
 
     const handleClick = () => {
         setIsOpen(!isOpen)
     }
     return (
-        <header className="w-full px-32 py-8 font-medium flex items-center justify-between dark:text-light relative z-10 lg:px-16 md:px-12 sm:px-8">
+        <header
+            className="w-full px-32 py-8 font-medium flex items-center justify-between
+            dark:text-light relative z-10 lg:px-16 md:px-12 sm:px-8">
+            {showTransition && <TransitionMode/>}
             <button className="flex-col justify-center items-center p-2 hidden lg:flex" onClick={handleClick}>
                 <span
                     className={`bg-dark dark:bg-light block h-[2px] w-6 rounded-sm transition-all duration-300 ease-in-out ${
@@ -115,14 +128,9 @@ const NavBar = () => {
                         <DribbbleIcon/>
                     </motion.a>
 
-                    <button onClick={() => setMode(mode === "light" ? "dark" : "light")}
-                            className={`ml-3 flex items-center justify-center rounded-full p-1
-                ${mode === "light" ? "bg-dark text-light" : "bg-light text-dark"}`}>
-                        {mode === "dark" ? (
-                            <SunIcon className={"fill-dark"}/>
-                        ) : (
-                            <MoonIcon className={"fill-dark"}/>
-                        )}
+                    <button onClick={handleThemeChange}
+                            className={`ml-3 flex items-center justify-center rounded-full p-1 ${mode === "light" ? "bg-dark text-light" : "bg-light text-dark"}`}>
+                        {mode === "dark" ? <SunIcon className={"fill-dark"}/> : <MoonIcon className={"fill-dark"}/>}
                     </button>
                 </nav>
 
@@ -131,19 +139,20 @@ const NavBar = () => {
 
             {isOpen ? (
                 <motion.div
-                    className="min-w-[70vw] flex flex-col justify-between z-30 items-center fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-                    bg-dark/90 dark:bg-light/75 rounded-lg backdrop-blur-lg py-32"
-                    initial={{scale: 0, opacity:0, x: "-50%", y: "-50%"}}
-                    animate={{scale:1, opacity: 1}}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className="min-w-[70vw] xs:min-w-[85vw] flex flex-col justify-between z-30 items-center fixed top-1/2 left-1/2
+                    -translate-x-1/2 -translate-y-1/2
+                    bg-dark/90 dark:bg-light/75 transition-colors duration-500 ease-in-out rounded-lg backdrop-blur-lg py-32"
+                    initial={{scale: 0, opacity: 0, x: "-50%", y: "-50%"}}
+                    animate={{scale: 1, opacity: 1}}
+                    transition={{duration: 0.3, ease: "easeInOut"}}
                 >
-                    <nav className="flex items-center flex-col justify-center">
+                    <nav className="flex items-center flex-col justify-center xs:gap-2">
                         <CustomMobileLink href="/" title="Home" className="" toggle={handleClick}/>
                         <CustomMobileLink href="/about" title="About" className="" toggle={handleClick}/>
                         <CustomMobileLink href="/projects" title="Projects" className="" toggle={handleClick}/>
                         <CustomMobileLink href="/articles" title="Articles" className="" toggle={handleClick}/>
                     </nav>
-                    <nav className="flex items-center justify-center flex-wrap mt-2">
+                    <nav className="flex items-center justify-center flex-wrap mt-10">
                         <motion.a href="https://twitter.com"
                                   target="_blank"
                                   whileHover={{y: -2}}
@@ -180,9 +189,9 @@ const NavBar = () => {
                             <DribbbleIcon/>
                         </motion.a>
 
-                        <button onClick={() => setMode(mode === "light" ? "dark" : "light")}
+                        <button onClick={handleThemeChange}
                                 className={`ml-3 flex items-center justify-center rounded-full p-1
-                ${mode === "light" ? "bg-dark text-light" : "bg-light text-dark"}`}>
+                ${mode === "light" ? "bg-light text-dark    " : "bg-dark text-light"}`}>
                             {mode === "dark" ? (
                                 <SunIcon className={"fill-dark"}/>
                             ) : (
@@ -199,6 +208,10 @@ const NavBar = () => {
                 <Logo/>
             </div>
 
+            <div
+                className="hidden z-20 lg:inline-block absolute top-3.5 sm:-right-4 xs:-right-5 lg:right-0 bottom-0 w-24 h-auto sm:top-5">
+                <CatComponent className="fill-dark dark:fill-light text-6xl sm:text-5xl"/>
+            </div>
         </header>
     )
 }

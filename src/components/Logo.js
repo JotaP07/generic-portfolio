@@ -1,6 +1,7 @@
-import React from 'react'
+import React from 'react';
 import Link from "next/link";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
+import LogoJp from "@/components/Icons";
 
 const MotionLink = motion(Link);
 
@@ -9,21 +10,19 @@ const Logo = () => {
         <div className="flex items-center justify-center mt-2">
             <MotionLink
                 href="/"
-                className="w-16 h-16 bg-dark text-light flex items-center
-                justify-center rounded-full text-2xl font-bold border border-solid border-transparent dark:border-light"
+                className="w-16 h-16 bg-dark text-light flex items-center justify-center rounded-full text-2xl font-bold border-2 border-solid border-transparent dark:border-light"
                 whileHover={{
-                    backgroundColor: ["#121212",
-                        "rgba(131,58,180,1)",
-                        "rgba(253,29,29,1)",
-                        "rgba(252,176,69,1)",
-                        "rgba(131,58,180,1)",
-                        "#121212"],
-                    transition: {duration:1.4, repeat: Infinity}
+                    backgroundColor: ["#121212", "rgba(131,58,180,1)", "rgba(253,29,29,1)", "rgba(252,176,69,1)", "rgba(131,58,180,1)", "#121212"],
+                    transition: { duration: 1.4, repeat: Infinity }
                 }}
             >
-                CB
+                <div className="flex items-center justify-center">
+                    {/*you can put your initial or logo here*/}
+                    <LogoJp className="fill-light w-[50px] h-[45px] " />
+                </div>
             </MotionLink>
         </div>
-    )
+    );
 }
-export default Logo
+
+export default Logo;
