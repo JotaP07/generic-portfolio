@@ -1,51 +1,97 @@
-import React from 'react'
-import {motion} from "framer-motion";
+import React from 'react';
+import gridImage from "@/assets/images/grid-image1.png";
+import gridImage2 from "@/assets/images/grid-image2.png";
 
-
-const Skill = ({name, x, y}) => {
-    return (
-        <motion.div
-            className="flex items-center justify-center rounded-full font-semibold
-    bg-dark text-light py-3 px-6 shadow-dark cursor-pointer absolute dark:bg-light dark:text-dark
-    lg:py-2 lg:px-4 md:text-sm md:py-1.5 md:px-3 xs:bg-transparent xs:dark:bg-transparent xs:text-dark xs:dark:text-light xs:font-bold"
-            initial={{x: 0, y: 0}}
-            whileInView={{x: x, y: y}}
-            transition={{duration: 1.3}} // Transição padrão para whileInView
-            whileHover={{scale: 1.05, transition: {duration: 0.3}}} // Transição de hover
-            viewport={{once: true}}
-        >
-            {name}
-        </motion.div>
-    )
-}
 const Skills = () => {
     return (
-        <>
-            <h2 className="font-bold text-7xl mt-64 mb-8 w-full text-center
-             md:text-6xl md-mt-32">Skills</h2>
-            <div
-                className="w-full h-screen relative flex items-center justify-center rounded-full bg-circularLight dark:bg-circularDark">
-                <motion.div className="flex items-center justify-center rounded-full font-semibold
-                 bg-dark text-light p-8 shadow-dark cursor-pointer dark:bg-light dark:text-dark"
-                            whileHover={{scale: 1.05}}
-                            transition={{duration: 0.3}}
-                            >
-                    Web
-                </motion.div>
 
-
-                    <Skill name="HTML" x="-25vw" y="-2vw"/>
-                    <Skill name="CSS" x="-5vw" y="-10vw"/>
-                    <Skill name="JavaScript" x="20vw" y="3vw"/>
-                    <Skill name="React" x="0vw" y="11vw"/>
-                    <Skill name="Next.js" x="-20vw" y="-15vw"/>
-                    <Skill name="Node.js" x="15vw" y="-12vw"/>
-                    <Skill name="Web Design" x="0vw" y="-21vw"/>
-                    <Skill name="Angular" x="-25vw" y="12vw"/>
-                    <Skill name="Tailwind CSS" x="18vw" y="15vw"/>
+        <section className="c-space w-full pt-36 mt-32">
+            <div className="relative">
+            <h2 className="font-bold text-7xl mb-10 text-start md:text-6xl">Skills</h2>
+            <span className={`h-[3px] w-72 inline-block
+         bg-dark absolute left-[20%] bottom-8 group-hover:w-full
+          dark:bg-purple-500`}>&nbsp;</span>
 
             </div>
-        </>
-    )
-}
-export default Skills
+            <div
+                className="grid grid-cols-3 sm:grid-cols-2 xl:grid-cols-4 relative rounded-2xl py-16"
+                style={{
+                    backgroundImage: `url(${gridImage.src})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    position: 'relative',
+                }}
+            >
+                {/* Sobreposição de opacidade */}
+                <div className="absolute inset-0 z-1" style={{
+                    background: 'linear-gradient(0deg, rgba(27, 27, 27, 1) 0%, rgba(27,27,27,0.85) 5%, rgba(27,27,27,0.7) 8.6%, rgba(27,27,27,0) 15%, rgba(27, 27, 27, 0) 50%, rgba(27,27,27,0) 88%, rgba(27,27,27,0.8) 91%, rgba(27,27,27,0.9) 94%,  rgba(27, 27, 27, 2) 99%)',
+                    zIndex: 1
+                }}/>
+
+
+                {/* Skill Section 1 */}
+                <div className="col-span-2 xl:col-span-2 relative ">
+                    <div
+                        className="relative flex flex-col items-center text-center
+                         p-4 border-b-5xl  border-mid-5xl  border-dark   h-[276px] w-full"
+                    >
+                        <div className="absolute  inset-0 bg-black/40 md:opacity-50"/>
+                        <div className="relative z-10 self-end w-1/2 text-end md:w-full md:text-center ">
+                            <p className="text-white text-lg font-bold md:text-base">Frontend Skills</p>
+                            <p className="text-white text-base font-medium md:text-sm">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Skill Section 2 */}
+                <div className="col-span-1 row-span-2 xl:col-span-2 xl:row-span-1 relative">
+                    <div
+                        className="relative flex items-start text-start p-4   bg-transparent  border-dark  h-full w-full"
+                    >
+                        <div className="absolute inset-0  bg-black/40 md:opacity-50"></div>
+                        <div className="relative z-10 w-full px-4 pb-4">
+                            <p className="text-white text-xl font-bold md:text-base">Backend Skills</p>
+                            <p className="text-white text-base font-medium md:text-sm">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Skill Section 3 */}
+                <div className="col-span-1 xl:col-span-2 relative ">
+                    <div
+                        className="relative flex items-end text-start p-4 border-mid-5xl   h-[276px] w-full"
+                    >
+                        <div className="absolute inset-0 bg-black/40 md:opacity-50"></div>
+                        <div className="relative z-10 w-full px-4 pb-4">
+                            <p className="text-white text-xl font-bold md:text-base">Soft Skills</p>
+                            <p className="text-white text-base font-medium md:text-sm w-4/6">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Contact Section */}
+                <div className="col-span-1 xl:col-span-2 relative">
+                    <div
+                        className="relative flex items-end text-start p-4 border-mid-5xl  border-dark  h-[276px] w-full"
+                    >
+                        <div className="absolute inset-0 bg-black/40 md:opacity-50"></div>
+                        <div className="relative z-10 w-full px-4 pb-4">
+                            <p className="text-white text-xl font-bold md:text-base">Contact</p>
+                            <p className="text-white text-base font-medium md:text-sm w-4/6">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default Skills;

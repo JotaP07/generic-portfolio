@@ -3,9 +3,16 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --scroll-behavior-default: smooth;
+}
+
 html {
-    overscroll-behavior: none;
-    scroll-behavior: smooth;
+    scroll-behavior: var(--scroll-behavior-default);
+}
+
+* {
+    scroll-behavior: var(--scroll-behavior-default);
 }
 
 html,
@@ -17,4 +24,39 @@ body {
 
 * {
     box-sizing: border-box;
+}
+
+@layer utilities {
+    .c-space {
+        @apply sm:px-10 px-5;
+    }
+
+    /* about section */
+    .grid-container {
+        @apply w-full h-full border  rounded-lg sm:p-7 p-4 flex flex-col gap-5;
+    }
+
+    .grid-container2 {
+        @apply w-full  border rounded-lg sm:p-7 p-4 flex flex-col gap-5;
+    }
+
+    .grid-headtext {
+        @apply text-xl font-semibold mb-2 text-white;
+    }
+
+    .grid-subtext {
+        @apply text-base;
+    }
+
+    .copy-container {
+        @apply cursor-pointer flex justify-center items-center gap-2;
+    }
+
+    .border-b-5xl {
+        border-bottom: 15px solid #1b1b1b;
+    }
+
+    .border-mid-5xl{
+        border-right: 15px solid #1b1b1b;
+    }
 }

@@ -20,7 +20,7 @@ export default function Home() {
             </Head>
             <TransitionEffect/>
             <main className="flex items-center text-dark w-full min-h-screen dark:text-light">
-                <Layout className="pt-0 md:-mt-16 sm:pt-8 lg:-mt-20 xl:pt-0 sm:-mt-32 sm:pb-0 xs:-mt-32 xs:pb-0">
+                <Layout className="pt-0 md:-mt-16 sm:pt-8 lg:-mt-20 xl:pt-0 sm:-mt-32 sm:pb-0 xs:-mt-32 xs:py-0">
                     <div className="flex items-center justify-between w-full lg:flex-col">
                         <div className="w-1/2  lg:w-full md:mb-8 md:w-4/5 xs:w-full">
                             <Image src={profilePic}
