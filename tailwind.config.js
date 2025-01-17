@@ -23,9 +23,10 @@ module.exports = {
                 'spin-slow': 'spin 8s linear infinite',
             },
             backgroundImage: {
-                circularLight: 'repeating-radial-gradient(circle, rgba(0,0,0,0.1) 0px, rgba(0,0,0,0.3) 3px, #f5f5f5 4px, #f5f5f5 108px)',
-                circularDark: 'repeating-radial-gradient(circle, rgba(255,255,255,0.1) 0px, rgba(255,255,255,0.3) 3px, #1b1b1b 4px, #1b1b1b 108px)',
-
+                bgDarkXl: 'linear-gradient(0deg, rgba(27, 27, 27, 1) 0%, rgba(27,27,27,0.85) 5%, rgba(27,27,27,0.7) 8.6%, rgba(27,27,27,0) 15%, rgba(27, 27, 27, 0) 50%, rgba(27,27,27,0) 88%, rgba(27,27,27,0.8) 91%, rgba(27,27,27,0.9) 94%,  rgba(27, 27, 27, 2) 100%)',
+                bgDark: 'linear-gradient(0deg, rgba(27, 27, 27, 1) 0%, rgba(27,27,27,0.85) 5%, rgba(27,27,27,0.7) 8.6%, rgba(27,27,27,0) 15%, rgba(27, 27, 27, 0) 50%,  rgba(27,27,27,0) 88%, rgba(27,27,27,0.6) 96%,  rgba(27, 27, 27, 2) 100%)',
+                bgLight: 'linear-gradient(0deg, rgba(245, 245, 245, 1) 0%, rgba(245,245,245,0.85) 5%, rgba(245,245,245,0.7) 8.6%, rgba(245,245,245,0) 15%, rgba(245, 245, 245, 0) 50%, rgba(245,245,245,0) 88%, rgba(245,245,245,0.8) 91%, rgba(245,245,245,0.9) 94%, rgba(245, 245, 245, 2) 100%)',
+                bgLightXl: 'linear-gradient(0deg, rgba(245, 245, 245, 1) 0%, rgba(245,245,245,0.85) 5%, rgba(245,245,245,0.7) 8.6%, rgba(245,245,245,0) 15%, rgba(245, 245, 245, 0) 50%, rgba(245,245,245,0) 88%, rgba(245,245,245,0.6) 96%, rgba(245, 245, 245, 2) 100%)',
             },
         },
         screens: {
