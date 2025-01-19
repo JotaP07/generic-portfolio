@@ -40,7 +40,7 @@ const Skills = () => {
                     >
                         <div className="absolute inset-0   bg-black/20 dark:bg-black/40"/>
                         <div className="relative self-end  z-10 w-3/4 text-end lg:w-full  sm:w-full lg:self-end px-4 pb-4">
-                            <p className="dark:text-white text-lg font-bold md:text-base sm:text-xl">Frontend Skills</p>
+                            <p className="dark:text-white text-2xl font-bold md:text-base sm:text-xl">Frontend Skills</p>
                             <p className="dark:text-white text-base font-medium md:text-sm sm:text-lg">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                             </p>
@@ -50,13 +50,14 @@ const Skills = () => {
 
 
                 {/* Skill Section 2 */}
-                <div className="col-span-1 row-span-2 xl:col-span-2 xl:row-span-1 relative sm:h-64 xl:border-b-5xl">
+                <div className="col-span-1 row-span-2 xl:col-span-2 xl:row-span-1 relative sm:h-64 xl:border-b-5xl dark:border-dark ">
                     <div
-                        className="relative flex items-start text-start p-4    dark:border-dark xl:border-b-2  h-full w-full lg:items-center sm:text-center"
+                        className="relative flex items-start text-start p-4
+                        xl:border-b-2  h-full w-full lg:items-center sm:text-center dark:border-dark "
                     >
                         <div className="absolute inset-0  bg-black/20  dark:bg-black/40 "></div>
                         <div className="relative z-10 w-full px-4 pb-4">
-                            <p className="dark:text-white text-xl font-bold md:text-base sm:text-xl">Backend Skills</p>
+                            <p className="dark:text-white text-2xl font-bold md:text-base sm:text-xl">Backend Skills</p>
                             <p className="dark:text-white text-base font-medium md:text-sm sm:text-lg">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                             </p>
@@ -72,8 +73,8 @@ const Skills = () => {
                     >
                         <div className="absolute inset-0   bg-black/20 dark:bg-black/40 "></div>
                         <div className="relative z-10 w-full px-4 pb-4">
-                            <p className="dark:text-white text-xl font-bold md:text-base sm:text-xl">Soft Skills</p>
-                            <p className="dark:text-white text-base font-medium md:text-sm w-4/6 lg:w-full sm:text-lg">
+                            <p className="dark:text-white text-2xl font-bold md:text-base sm:text-xl">Soft Skills</p>
+                            <p className="dark:text-white text-base font-medium md:text-sm w-4/6 md:w-full lg:w-full sm:text-lg">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                             </p>
                         </div>
@@ -88,7 +89,7 @@ const Skills = () => {
                     >
                         <div className="absolute inset-0  bg-black/20 dark:bg-black/40 "></div>
                         <div className="relative z-10 w-full px-4 pb-4">
-                            <p className="dark:text-white text-xl font-bold md:text-base sm:text-xl">Contact</p>
+                            <p className="dark:text-white text-2xl font-bold md:text-base sm:text-xl">Contact</p>
                             <p className="dark:text-white text-base font-medium md:text-sm w-4/6  lg:w-full sm:text-lg">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                             </p>
