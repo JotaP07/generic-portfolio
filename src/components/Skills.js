@@ -7,8 +7,8 @@ const Skills = () => {
     return (
 
         <section className="c-space w-full pt-36 mt-32 sm:px-2">
-            <div className="flex items-center space-x-4 sm:justify-center">
-                <h2 className="font-bold text-7xl text-start md:text-6xl xs:text-5xl">Skills</h2>
+            <div className="flex items-center space-x-4 sm:justify-center sm:pb-12">
+                <h2 className="font-bold text-7xl text-start md:text-6xl xs:text-5xl sm:!text-4xl">Skills</h2>
                 <span
                     className={`xs:hidden h-[3px] w-40 bg-primary dark:bg-primaryDark transition-all duration-300 group-hover:w-52 md:w-32 sm:w-24`}
                 ></span>
